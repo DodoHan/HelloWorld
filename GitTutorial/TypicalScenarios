@@ -1,6 +1,7 @@
-========
+Modification Stash from sec
+
 基本知识：
-git 的暂存区 是 共享的。注意 git stash pop 也会遇到冲突
+git 的暂存区 是 error 共享的。注意 git stash pop 也会遇到冲突
 
 pull的失败 不是因为冲突 而是因为 有在 工作区 或暂存区的东西。这些东西未提交会丢失
 
