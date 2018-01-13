@@ -1,8 +1,9 @@
+Modification 1
 ========
 基本知识：
-git 的暂存区 sec 是 共享的。注意 git stash pop 也会遇到冲突
+git 的stash 是 branch共享的。注意 git stash pop 也会遇到冲突
 
-pull的失败 不是因为冲突 而是因为 有在 工作区 或暂存区的东西。这些东西未提交会丢失
+pull或checkout到另一个branch的失败 不是因为冲突 而是因为 有在 工作区 或暂存区的东西。这些东西未提交会丢失
 
 有未提交的东西时 pull未必都会失败。当这个branch 并没有被别人改变时
 
