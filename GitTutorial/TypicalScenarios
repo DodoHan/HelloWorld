@@ -1,0 +1,35 @@
+========
+基本知识：
+git 的暂存区 是 共享的。注意 git stash pop 也会遇到冲突
+
+pull的失败 不是因为冲突 而是因为 有在 工作区 或暂存区的东西。这些东西未提交会丢失
+
+有未提交的东西时 pull未必都会失败。当这个branch 并没有被别人改变时
+
+切换branch 不会失败 因为 暂存区是共享的
+
+
+
+
+===========
+若干典型场景
+1. feature1 做到一半 不易做本地commit 或 commit时间太长，需要改另一个bug ： git stash save message ； 建换分支 改bug commit push；换分支 git stash pop
+2. 一些本地工作区的改动 （local.conf或hide 本地不好用的代码）做feature1时要用 做feature2时也要用： 用git stash；切换 到featute2 ；git stash pop 有冲突 解决冲突
+       比checkout . 后 重做好
+3. 做feature1的工作，做的过程中 develop 分支可能有修改 这修改 可能有冲突 可能没冲突 最后要pull request 到develop 分支上：是不断的pull origin develop 再提交push，再pull request。还是 从不pull origin develop 先提交push，再pull request时 冲突解决冲突？后者。减少其他不靠谱代码对自己的feature的干扰（其他代码可能有错 回退），是一种隔离 专注化的思想。有冲突最后一次性解决，高效。最后解决冲突后理论上应该在本地测试后 才能提交pull request
+
+当feature的开发尚未开始 或 已经开始了 并知道有最后不好弄的冲突时 可以择机提前弄。但考虑到 develop的代码可能会有回退 不建议早进行 pull
+
+
+4 在错误的branch 上 提交了 commit
+a 尚未push
+git reset
+
+b 已经提交
+git revert commit号
+
+当然有人在push代码以后,也使用 reset --hard <commit...> 回退代码到某个版本之前,但是这样会有一个问题,你线上的代码没有变,线上commit,index都没有变,当你把本地代码修改完提交的时候你会发现权是冲突.....
+所以,这种情况你要使用下面的方式
+
+
+5. cherry pick
