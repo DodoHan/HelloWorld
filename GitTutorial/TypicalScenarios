@@ -1,4 +1,4 @@
-conf change
+conf change reset this!
 ========
 基本知识：
 git 的stash 是 branch共享的。注意 git stash pop 也会遇到冲突
