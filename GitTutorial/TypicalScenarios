@@ -1,3 +1,4 @@
+Modify from initial-code
 ========
 基本知识：
 git 的暂存区 是 共享的。注意 git stash pop 也会遇到冲突
