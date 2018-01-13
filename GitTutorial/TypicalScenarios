@@ -1,4 +1,4 @@
-conf change
+conf change reset this!
 ========
 基本知识：
 git 的stash 是 branch共享的。注意 git stash pop 也会遇到冲突
@@ -30,6 +30,9 @@ pull或checkout到另一个branch的失败 [不是因为冲突 而是因为 有�
 4 在错误的branch 上 提交了 commit
 a 尚未push
 git reset
+Shore的实验 git reset不好用，但是
+git reset --hard HEAD^ 好用，在windows的dos里是 git reset --hard "HEAD^"
+注意此时 本地修改被去掉了！
 
 b 已经提交
 git revert commit号
