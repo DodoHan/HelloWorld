@@ -36,6 +36,7 @@ git reset --hard HEAD^ 好用，在windows的dos里是 git reset --hard "HEAD^"
 
 b 已经提交
 git revert commit号
+在本地branch用过revert后， 然后不会有add和commit， 直接是git push到远程
 
 当然有人在push代码以后,也使用 reset --hard <commit...> 回退代码到某个版本之前,但是这样会有一个问题,你线上的代码没有变,线上commit,index都没有变,当你把本地代码修改完提交的时候你会发现权是冲突.....
 所以,这种情况你要使用下面的方式
